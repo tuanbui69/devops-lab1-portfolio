@@ -1,0 +1,5 @@
+{
+  "http://localhost:37051/about.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1791277986603-75142.report.html",
+  "http://localhost:37051/contact.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1791277986956-92385.report.html",
+  "http://localhost:37051/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1791277987213-61382.report.html"
+}
