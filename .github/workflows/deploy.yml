@@ -36,6 +36,12 @@ jobs:
             echo " index.html NOT found!"
             exit 1
           fi
+          if [ -f "about.html" ]; then
+            echo "about.html found! File size: $(wc -c < about.html) bytes"
+          fi
+          if [ -f "contact.html" ]; then
+            echo "contact.html found! File size: $(wc -c < contact.html) bytes"
+          fi
 
       # Step 3: Deploy lên GitHub Pages
       - name: Deploy to GitHub Pages

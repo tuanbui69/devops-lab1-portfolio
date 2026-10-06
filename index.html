@@ -13,57 +13,110 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 24px;
             color: #333;
         }
         .container {
             background: white;
             border-radius: 16px;
-            padding: 48px;
-            max-width: 600px;
+            padding: 40px 48px;
+            max-width: 650px;
+            width: 100%;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             text-align: center;
         }
-        h1 { color: #667eea; margin-bottom: 8px; font-size: 32px; }
-        h2 { color: #764ba2; margin-bottom: 24px; font-size: 18px; font-weight: normal; }
-        .info { background: #f8f9fa; border-radius: 8px; padding: 20px; margin: 16px 0; text-align: left; }
-        .info p { margin: 8px 0; }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            background: #f1f3fd;
+        }
+        .nav a.active, .nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
+            margin-bottom: 16px;
+            object-fit: cover;
+        }
+        h1 { color: #667eea; margin-bottom: 8px; font-size: 30px; }
+        h2 { color: #764ba2; margin-bottom: 20px; font-size: 17px; font-weight: normal; }
+        .info { background: #f8f9fa; border-radius: 10px; padding: 18px 22px; margin: 18px 0; text-align: left; border-left: 4px solid #667eea; }
+        .info p { margin: 8px 0; font-size: 14.5px; }
+        .badges-wrapper { margin: 16px 0; }
         .badge {
             display: inline-block;
             background: #667eea;
             color: white;
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             margin: 4px;
+            font-weight: 500;
         }
-        .footer { margin-top: 24px; font-size: 13px; color: #999; }
+        .footer { margin-top: 24px; font-size: 13px; color: #777; line-height: 1.6; }
         .status { color: #38a169; font-weight: bold; }
+        .repo-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: #764ba2;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 13.5px;
+        }
+        .repo-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="nav">
+            <a href="index.html" class="active">Trang chủ</a>
+            <a href="about.html">Về tôi</a>
+            <a href="contact.html">Liên hệ</a>
+        </div>
+
+        <img src="avatar.png" alt="Avatar Bui Dinh Tuan" class="avatar" onerror="this.src='https://avatars.githubusercontent.com/u/76955515?v=4'">
+
         <h1>👋 Xin chào, DevOps!</h1>
         <h2>Lab 1 — Website đã được cập nhật tự động! 🚀</h2>
 
         <div class="info">
-            <p>🎯 <strong>Bài học:</strong> DevOps Lab 1 — Tổng quan</p>
+            <p>🎯 <strong>Bài học:</strong> DevOps Lab 1 — Tổng quan về Vận hành & Bảo trì Phần mềm</p>
+            <p>👤 <strong>Sinh viên:</strong> Bùi Đình Tuấn (GitHub: <a href="https://github.com/tuanbui69" target="_blank" style="color:#667eea; text-decoration:none;">@tuanbui69</a>)</p>
             <p>🚀 <strong>Deploy bởi:</strong> GitHub Actions CI/CD</p>
             <p>📅 <strong>Ngày deploy:</strong> <span id="date"></span></p>
             <p>🔄 <strong>Pipeline status:</strong> <span class="status">✅ Automated</span></p>
         </div>
 
-        <div>
+        <div class="badges-wrapper">
             <span class="badge">HTML5</span>
             <span class="badge">CSS3</span>
             <span class="badge">Git</span>
             <span class="badge">GitHub Actions</span>
             <span class="badge">CI/CD</span>
             <span class="badge">DevOps</span>
+            <span class="badge">GitHub Pages</span>
         </div>
 
         <div class="footer">
             <p>Deployed automatically via GitHub Actions Pipeline</p>
             <p>🔄 Push code → CI Build → Auto Deploy → Live! 🚀</p>
+            <a href="https://github.com/tuanbui69/devops-lab1-portfolio" target="_blank" class="repo-link">📂 Xem mã nguồn trên GitHub Repo</a>
         </div>
     </div>
 
