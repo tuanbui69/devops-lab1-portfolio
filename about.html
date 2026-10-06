@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về Tôi — DevOps Lab 1</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            color: #333;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 48px;
+            max-width: 650px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            background: #f1f3fd;
+        }
+        .nav a.active, .nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+        h1 { color: #667eea; margin-bottom: 8px; font-size: 28px; }
+        h2 { color: #764ba2; margin-bottom: 20px; font-size: 16px; font-weight: normal; }
+        .content {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 22px;
+            margin: 18px 0;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 14.5px;
+        }
+        .content h3 { color: #667eea; margin-bottom: 8px; font-size: 16px; }
+        .content ul { margin-left: 20px; margin-bottom: 12px; }
+        .footer { margin-top: 24px; font-size: 13px; color: #777; }
+        .btn-back {
+            display: inline-block;
+            margin-top: 14px;
+            background: #667eea;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+        .btn-back:hover { background: #5568d3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">Trang chủ</a>
+            <a href="about.html" class="active">Về tôi</a>
+            <a href="contact.html">Liên hệ</a>
+        </div>
+
+        <h1>👨‍💻 Giới Thiệu Bản Thân</h1>
+        <h2>DevOps Lab 1 — Kiến thức & Trải nghiệm Vòng đời DevOps</h2>
+
+        <div class="content">
+            <h3>🎯 Mục tiêu môn học</h3>
+            <p>Trải nghiệm và làm chủ vòng đời DevOps: <strong>Plan → Code → Build → Test → Deploy → Monitor</strong> kết hợp công cụ tự động hóa GitHub Actions.</p>
+            <br>
+            <h3>🛠️ Kỹ năng thực hành trong Lab 1:</h3>
+            <ul>
+                <li>Quản lý mã nguồn với Git & GitHub Repository</li>
+                <li>Xây dựng CI/CD Pipeline với GitHub Actions Workflow (.yml)</li>
+                <li>Triển khai tự động hóa (Automated Continuous Deployment) lên GitHub Pages</li>
+                <li>So sánh phương pháp DevOps hiện đại và cách triển khai thủ công truyền thống</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="btn-back">⬅ Quay lại Trang chủ</a>
+
+        <div class="footer">
+            <p>© 2026 Bui Dinh Tuan • DevOps Portfolio</p>
+        </div>
+    </div>
+</body>
+</html>
