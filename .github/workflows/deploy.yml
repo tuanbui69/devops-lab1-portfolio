@@ -1,6 +1,6 @@
 # ============================================================
 # DevOps Lab 1 — CI/CD Pipeline với GitHub Actions
-# Tự động deploy website lên GitHub Pages mỗi khi push code
+# Tự động test chất lượng với Lighthouse CI & Deploy lên GitHub Pages
 # ============================================================
 
 name: Deploy to GitHub Pages
@@ -16,38 +16,46 @@ permissions:
 
 # === Các job trong pipeline ===
 jobs:
-  # Job 1: Build & Deploy
+  # Job 1: Build, Test & Deploy
   build-and-deploy:
     runs-on: ubuntu-latest   # Chạy trên máy ảo Ubuntu (free)
 
     steps:
       # Step 1: Checkout code từ GitHub
-      - name: Checkout Code
+      - name: 📦 Checkout Code
         uses: actions/checkout@v4
 
       # Step 2: Kiểm tra HTML cơ bản
-      - name: Validate HTML
+      - name: 🧪 Validate HTML
         run: |
           echo "Checking index.html exists..."
           if [ -f "index.html" ]; then
-            echo "index.html found!"
+            echo "✅ index.html found!"
             echo "File size: $(wc -c < index.html) bytes"
           else
-            echo " index.html NOT found!"
+            echo "❌ index.html NOT found!"
             exit 1
           fi
           if [ -f "about.html" ]; then
-            echo "about.html found! File size: $(wc -c < about.html) bytes"
+            echo "✅ about.html found! File size: $(wc -c < about.html) bytes"
           fi
           if [ -f "contact.html" ]; then
-            echo "contact.html found! File size: $(wc -c < contact.html) bytes"
+            echo "✅ contact.html found! File size: $(wc -c < contact.html) bytes"
           fi
 
-      # Step 3: Deploy lên GitHub Pages
-      - name: Deploy to GitHub Pages
+      # Step 3: Audit chất lượng và SEO với Lighthouse CI
+      - name: 🔍 Audit với Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      # Step 4: Deploy lên GitHub Pages
+      - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
-          commit_message: "Auto-deploy from CI pipeline"
+          commit_message: "🚀 Auto-deploy from CI pipeline with Lighthouse CI audit"
